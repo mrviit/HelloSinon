@@ -1,10 +1,12 @@
 
-import { BBB } from "./BBB";
+// import { BBB } from "./BBB";
+// tslint:disable-next-line:no-var-requires
+const BB = require("../src/BBB");
 
-export class AAA
-    extends BBB {
+class AAA
+    extends BB {
     public hello(): string {
         return super.say("Hello!");
     }
 }
-// module.exports = AAA;
+module.exports = AAA;

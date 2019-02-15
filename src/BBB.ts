@@ -1,5 +1,5 @@
 
-export class BBB {
+class BBB {
     constructor() {
         throw new Error("BBB");
     }
@@ -8,4 +8,4 @@ export class BBB {
     }
 }
 
-// module.exports = BBB;
+module.exports = BBB;
