@@ -7,16 +7,10 @@ const AA = require("../src/AAA");
 
 import sinon from "sinon";
 
-let sandbox;
-let memcachedStub;
-
 describe("Hello Sinon", () => {
 
     let a: any;
     beforeEach(() => {
-
-        sandbox = sinon.sandbox.create();
-        memcachedStub = sandbox.stub(BB.prototype, "constructor");
 
         // How to isolate new AAA from BBB?
         a = new AA();  // error because of BBB::constructor throws an error
