@@ -14,19 +14,16 @@ describe("Hello Sinon", () => {
             const stub = sinon.stub().callsFake(() => { });
             Object.setPrototypeOf(AA, stub);
             let a = new AA();
-            const say = sinon.spy(a.__proto__, "say");
+            const say = sinon.spy(a.__proto__.__proto__, "say");
 
             sinon.spy(a, "hello");
 
             a.hello();
             a.hello();
 
-            console.log(say.callCount);
             sinon.assert.calledTwice(a.hello);
             sinon.assert.calledOnce(stub);
-            // sinon.assert.calledTwice(say);
-
-            // how to verify that super.say has been called once with string "Hello!"?
+            sinon.assert.calledTwice(say);
         });
     });
 });
